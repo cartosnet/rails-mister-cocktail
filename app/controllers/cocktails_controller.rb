@@ -11,6 +11,10 @@ class CocktailsController < ApplicationController
     @cocktail = Cocktail.new
   end
 
+   def search
+    @songs = Song.where(name: params[:query])
+  end
+
   def create
     @cocktail = Cocktail.create(cocktail_params)
     if @cocktail.save
@@ -25,7 +29,7 @@ class CocktailsController < ApplicationController
   def cocktail_params
     params
       .require(:cocktail)
-      .permit(:name)
+      .permit(:name, :photo, :photo_cache)
   end
 
 end

@@ -1,12 +1,70 @@
 
-<h1>All the cocktails</h1>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <%= image_tag "caroussel1.jpg", class: "first-slide" %>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Be creative, create your own Coktails</h1>
+              <p>The website for all the Cocktails lovers, create and share all your favorite Cocktails</p>
+              <p><%= link_to 'Add a new cocktail', new_cocktail_path , class: "btn btn-lg btn-primary" %></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <%= image_tag "caroussel2.jpg", class: "second-slide" %>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Be creative, create your own Coktails</h1>
+              <p>The website for all the Cocktails lovers, create and share all your favorite Cocktails</p>
+              <p><%= link_to 'Add a new cocktail', new_cocktail_path , class: "btn btn-lg btn-primary" %></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <%= image_tag "caroussel3.jpg", class: "third-slide" %>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Be creative, create your Coktails</h1>
+              <p>The website for all the Cocktails lovers, create and share all your favorite Cocktails</p>
+              <p><%= link_to 'Add a new cocktail', new_cocktail_path , class: "btn btn-lg btn-primary" %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div><!-- /.carousel -->
 
-<ul>
-<% @cocktails.each do |cocktail| %>
-  <li>
-    <%= link_to cocktail.name, cocktail_path(cocktail) %>
-  </li>
-<% end %>
-</ul>
 
-<%= link_to 'Add a new cocktail', new_cocktail_path %>
+
+
+<div class="container">
+  <div class="text-center">
+  <h1>All the cocktails</h1>
+    <div class="row">
+      <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image:
+         url('<%= cl_image_path cocktail.photo, height: 300, width: 400 %>')">
+            <div class="card-description">
+              <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+            </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+ </div>
+</div>

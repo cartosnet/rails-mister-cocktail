@@ -28,6 +28,8 @@ gem 'simple_form'
 
 gem 'awesome_print'
 gem 'figaro'
+gem 'cloudinary', '1.1.0'
+gem 'carrierwave', '~> 0.11.2'
 
 
 # Use jquery as the JavaScript library
@@ -56,6 +58,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
